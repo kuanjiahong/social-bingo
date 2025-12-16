@@ -36,6 +36,8 @@ const ITEMS = [
   "Has met Chow Yun Fat in HK before",
 ];
 
+const CENTER_INDEX = Math.floor(ITEMS.length / 2);
+
 const BINGO_LINES = [
   // rows
   [0, 1, 2, 3, 4],
@@ -60,20 +62,29 @@ interface BingoCellProps {
   value: string;
   onChange: (idx: number, input: string) => void;
   highlighted: boolean;
+  isCenter: boolean;
 }
 function BingoCell(props: Readonly<BingoCellProps>) {
-  const { idx, item, value, onChange, highlighted } = props;
+  const { idx, item, value, onChange, highlighted, isCenter } = props;
   return (
     <Box
       sx={{
         aspectRatio: "1 / 1",
         border: "2px solid",
-        borderColor: highlighted ? "success.main" : "grey.400",
+        borderColor: highlighted
+          ? "success.main"
+          : isCenter
+            ? "primary.main"
+            : "grey.400",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         p: 1,
-        backgroundColor: value ? "success.light" : "background.paper",
+        backgroundColor: isCenter
+          ? "primary.light"
+          : value
+            ? "success.light"
+            : "background.paper",
         transition: "all 0.2s",
       }}
     >
@@ -87,6 +98,7 @@ function BingoCell(props: Readonly<BingoCellProps>) {
       >
         {item}
       </Typography>
+
       <TextField
         value={value}
         onChange={(e) => {
@@ -190,6 +202,7 @@ function BingoCard() {
                 value={names[idx]}
                 highlighted={winningLine.includes(idx)}
                 onChange={updateName}
+                isCenter={idx === CENTER_INDEX}
               />
             </Grid>
           ))}
