@@ -157,6 +157,15 @@ function BingoCard() {
             New Card
           </Button>
         </Box>
+      </Stack>
+      <Box
+        sx={{
+          overflowX: "auto",
+          WebkitOverflowScrolling: "touch",
+          minWidth: 600, // adjust based on cell size
+          mx: "auto",
+        }}
+      >
         {hasBingo && (
           <Typography
             variant="h5"
@@ -165,20 +174,20 @@ function BingoCard() {
             🎉 BINGO! You've completed a line! 🎉
           </Typography>
         )}
-      </Stack>
-      <Grid container columns={5} spacing={2} gap={2} sx={{ mt: 2 }}>
-        {ITEMS.map((item, idx) => (
-          <Grid key={`${item}-${idx.toString()}`} size={1}>
-            <BingoCell
-              idx={idx}
-              item={item}
-              value={names[idx]}
-              highlighted={winningLine.includes(idx)}
-              onChange={updateName}
-            />
-          </Grid>
-        ))}
-      </Grid>
+        <Grid container columns={5} spacing={2} gap={2} sx={{ mt: 2 }}>
+          {ITEMS.map((item, idx) => (
+            <Grid key={`${item}-${idx.toString()}`} size={1}>
+              <BingoCell
+                idx={idx}
+                item={item}
+                value={names[idx]}
+                highlighted={winningLine.includes(idx)}
+                onChange={updateName}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Container>
   );
 }
