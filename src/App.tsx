@@ -182,6 +182,7 @@ function BingoCard() {
           overflowX: "auto",
           WebkitOverflowScrolling: "touch",
           minWidth: 600, // adjust based on cell size
+          minHeight: "100vh",
           mx: "auto",
         }}
       >
