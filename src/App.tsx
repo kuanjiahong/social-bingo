@@ -22,7 +22,7 @@ const ITEMS = [
   "Can name all Malaysian states",
   "Comes from East Malaysia",
   "Is a MAHK Member",
-  "Is not from KL or Penang",
+  "Not from KL or Penang",
   "Took STPM",
   "Has eaten durian during this year",
   "Has climbed Mt. Kinabalu",
