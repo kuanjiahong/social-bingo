@@ -158,6 +158,13 @@ function BingoCard() {
           </Button>
         </Box>
       </Stack>
+      <Typography
+        variant="caption"
+        align="center"
+        sx={{ color: "text.secondary", mt: 1 }}
+      >
+        ← Swipe to see more →
+      </Typography>
       <Box
         sx={{
           overflowX: "auto",
