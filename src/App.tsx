@@ -25,7 +25,7 @@ const ITEMS = [
   "Is not from KL or Penang",
   "Took STPM",
   "Has eaten durian during this year",
-  "Has climbed Mt. Kinabalue",
+  "Has climbed Mt. Kinabalu",
   "Has lived in HK for more than 2 years",
   "Can speak a bit of Cantonese",
   "Can cook at least 2 Malaysian dishes",
